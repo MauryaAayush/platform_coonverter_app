@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platform_coonverter_app/Screens/Setting_Screen/Setting_Screen.dart';
 import 'package:provider/provider.dart';
 
 import '../Models/Screen_Model.dart';
@@ -19,9 +20,10 @@ class AdaptiveTabBar extends StatelessWidget {
             PersonAddTab(),
             TabScreen(),
           CallScreen(),
-            PersonAddTab(),
+            SettingScreen(),
           ])
         : CupertinoTabScaffold(
+      resizeToAvoidBottomInset: false,
             tabBar: CupertinoTabBar(items: [
               BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_add)),
               BottomNavigationBarItem(

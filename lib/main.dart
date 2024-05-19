@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platform_coonverter_app/Providers/Profile_Provider.dart';
 import 'package:platform_coonverter_app/Screens/Main_Screen/Main_Screen.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,7 @@ void main() {
     ),
     ChangeNotifierProvider(create: (context) => ChatProvider(),),
     ChangeNotifierProvider(create: (context) => PersonAddProvider(),),
+    ChangeNotifierProvider(create: (context) => ProfileProvider(),)
 
   ], child: MyApp()));
 }
@@ -23,10 +25,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: MainScreen(),
-    );
+    return MainScreen();
   }
 }

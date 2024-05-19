@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-
+import 'package:url_launcher/url_launcher.dart' as url;
 import '../../Adaptives/Adaptive_CirculeAvtar.dart';
 import '../../Providers/Chat_Screen_Provider.dart';
 import '../../Providers/global_Provider.dart';
@@ -29,7 +29,16 @@ class CallScreen extends StatelessWidget {
                 title: Text(person.name ?? "No Name"),
                 subtitle:
                 Text(person.chatConversation ?? "No Conversation"),
-                trailing: Icon(Icons.call)
+                trailing: IconButton(
+                  onPressed: () {
+                    // Make a phone call to the specified number
+                    // launch("tel://1234567890");
+
+                    Uri uri= Uri.parse('tel: +91 ${providerTrue.personData[index].phoneNumber}');
+                    url.launchUrl(uri);
+                  },
+                  icon: Icon(Icons.call),
+                )
               );
             },
           ),
@@ -57,7 +66,13 @@ class CallScreen extends StatelessWidget {
                 ),
                 title: Text(person.name ?? "No Name"),
                 subtitle: Text(person.chatConversation ?? "No Conversation"),
-                trailing: Icon(CupertinoIcons.phone_fill)
+                trailing:CupertinoButton(
+                  onPressed: () {
+                    // Make a phone call to the specified number
+                    // launch("tel://1234567890");
+                  },
+                  child: Icon(CupertinoIcons.phone_fill),
+                )
               );
             },
           ),
