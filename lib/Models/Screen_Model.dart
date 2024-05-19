@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
+import '../Screens/Calls_Screen/Call_Screen.dart';
 import '../Screens/Chat_Screen/Chat_Screen.dart';
 import '../Screens/Contact_Screen/Contact_Screen.dart';
 
@@ -12,13 +13,13 @@ class ScreenModels {
 
 List<ScreenModels> screenList = [
   ScreenModels(
-      screen: PersonAddTab()
+      screen: const PersonAddTab()
   ),
   ScreenModels(
-      screen: TabScreen()
+      screen: const TabScreen()
   ),
   ScreenModels(
-      screen: PersonAddTab()
+      screen: const CallScreen()
   ),
   ScreenModels(
       screen: PersonAddTab()

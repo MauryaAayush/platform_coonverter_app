@@ -9,6 +9,7 @@ import '../Screens/Contact_Screen/Contact_Screen.dart';
 class PersonAddProvider extends ChangeNotifier {
   DateTime? dateTime;
   TimeOfDay? timeOfDay;
+  Duration? duration;
   ImagePicker _imagePicker = ImagePicker();
   File? imgpath;
   void setDate(DateTime? dateTime) {
@@ -16,8 +17,17 @@ class PersonAddProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setTime(TimeOfDay? timeOfDay) {
+  void setTime({TimeOfDay? timeOfDay, Duration? duration}) {
+    this.duration = duration;
     this.timeOfDay = timeOfDay;
+
+    if (duration != null) {
+      final int hours = duration.inHours % 24;
+      final int minutes = duration.inMinutes % 60;
+      this.timeOfDay = TimeOfDay(hour: hours, minute: minutes);
+    }
+
+
     notifyListeners();
   }
 

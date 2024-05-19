@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../Models/Screen_Model.dart';
 import '../Providers/global_Provider.dart';
+import '../Screens/Calls_Screen/Call_Screen.dart';
 import '../Screens/Chat_Screen/Chat_Screen.dart';
 import '../Screens/Contact_Screen/Contact_Screen.dart';
 
@@ -17,7 +18,7 @@ class AdaptiveTabBar extends StatelessWidget {
         children: [
             PersonAddTab(),
             TabScreen(),
-            PersonAddTab(),
+          CallScreen(),
             PersonAddTab(),
           ])
         : CupertinoTabScaffold(

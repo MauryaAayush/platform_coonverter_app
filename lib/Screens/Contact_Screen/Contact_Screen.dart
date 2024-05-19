@@ -9,9 +9,9 @@ import '../../Adaptives/Adaptive_Save.dart';
 import '../../Adaptives/Adaptive_textfield.dart';
 import '../../Providers/global_Provider.dart';
 
-TextEditingController txtFullName = TextEditingController();
-TextEditingController txtPhoneNumber = TextEditingController();
-TextEditingController txtChatConversation = TextEditingController();
+TextEditingController ?txtFullName = TextEditingController();
+TextEditingController ?txtPhoneNumber = TextEditingController();
+TextEditingController ?txtChatConversation = TextEditingController();
 
 class PersonAddTab extends StatelessWidget {
   const PersonAddTab({super.key});
@@ -29,21 +29,21 @@ class PersonAddTab extends StatelessWidget {
               height: 30,
             ),
             AdaptiveTextField(
-              controller: txtFullName,
+              controller: txtFullName!,
               hintText: "Full Name",
               icon: (Provider.of<SwitchProvider>(context).isAndroid)
                   ? Icon(Icons.person)
                   : Icon(CupertinoIcons.person),
             ),
             AdaptiveTextField(
-              controller: txtPhoneNumber,
+              controller: txtPhoneNumber!,
               hintText: "Phone Number",
               icon: (Provider.of<SwitchProvider>(context).isAndroid)
                   ? Icon(Icons.phone)
                   : Icon(CupertinoIcons.phone),
             ),
             AdaptiveTextField(
-              controller: txtChatConversation,
+              controller: txtChatConversation!,
               hintText: "Chat Conversation",
               icon: (Provider.of<SwitchProvider>(context).isAndroid)
                   ? Icon(Icons.chat)

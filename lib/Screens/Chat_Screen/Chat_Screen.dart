@@ -54,12 +54,12 @@ class TabScreen extends StatelessWidget {
                     return CupertinoListTile(
                       leading: ClipOval(
                         child: Container(
-                          height: 70,
-                          width: 70,
-                          color: CupertinoColors.activeGreen,
+                          height: 50,
+                          width: 50,
+                          // color: CupertinoColors.activeGreen,
                           child: Adaptive_CircleAvatar(
-                            height: 100,
-                            width: 100,
+                            height: 50,
+                            width: 50,
                           ),
                         ),
                       ),

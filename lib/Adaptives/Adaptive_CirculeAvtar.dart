@@ -51,7 +51,7 @@ class Adaptive_CircleAvatar extends StatelessWidget {
                   color: CupertinoColors.activeGreen,
                   image: imgPath == null
                       ? null
-                      : DecorationImage(image: FileImage(imgPath)),
+                      : DecorationImage(fit: BoxFit.cover,image: FileImage(imgPath)),
                 ),
                 child: imgPath == null
                     ? Icon(
