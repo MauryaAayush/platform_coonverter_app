@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:platform_coonverter_app/Screens/Main_Screen/Main_Screen.dart';
+import 'package:provider/provider.dart';
+
+import 'Providers/Add_Contact_Provider.dart';
+import 'Providers/Chat_Screen_Provider.dart';
+import 'Providers/global_Provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (context) => SwitchProvider(),
+    ),
+    ChangeNotifierProvider(create: (context) => ChatProvider(),),
+    ChangeNotifierProvider(create: (context) => PersonAddProvider(),),
+
+  ], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -11,9 +24,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MainScreen(),
     );
   }
 }

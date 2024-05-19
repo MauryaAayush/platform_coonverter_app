@@ -1,0 +1,27 @@
+import 'package:flutter/cupertino.dart';
+
+import '../Screens/Contact_Screen/Contact_Screen.dart';
+
+
+class ScreenModels {
+  final Widget screen;
+
+  ScreenModels({required this.screen});
+}
+
+List<ScreenModels> screenList = [
+  ScreenModels(
+      screen: PersonAddTab()
+  ),
+  ScreenModels(
+      screen: PersonAddTab()
+  ),
+  ScreenModels(
+      screen: PersonAddTab()
+  ),
+  ScreenModels(
+      screen: PersonAddTab()
+  ),
+
+
+];
