@@ -16,24 +16,30 @@ class TabScreen extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             itemCount: providerTrue.personData.length,
-            itemBuilder: (context, index) => ListTile(
-              leading: Adaptive_CircleAvatar(),
-              title: Text(providerTrue.personData[index].name.toString()),
-              subtitle: Text(
-                  providerTrue.personData[index].chatConversation.toString()),
-              trailing: Row(
-                children: [
-                  Text(
-                      "${providerTrue.personData[index].date!.day.toString() + "-" + providerTrue.personData[index].date!.month.toString() + "-" + providerTrue.personData[index].date!.year.toString()}"),
-                  Text(
-                    "${providerTrue.personData[index].timeOfDay!.hour.toString() + ":" + providerTrue.personData[index].timeOfDay!.minute.toString()}",
-                  )
-                ],
-              ),
-            ),
+            itemBuilder: (context, index) {
+              var person = providerTrue.personData[index];
+              return ListTile(
+                leading: Adaptive_CircleAvatar(radius: 30,),
+                title: Text(person.name.toString()),
+                subtitle: Text(person.chatConversation.toString()),
+                trailing: Column(
+                  mainAxisSize: MainAxisSize.min
+                  ,
+                  children: [
+                    Text(
+                      "${person.date!.day}-${person.date!.month}-${person.date!.year}",
+                    ),
+                    Text(
+                      "${person.timeOfDay!.hour}:${person.timeOfDay!.minute}",
+                    )
+                  ],
+                ),
+              );
+            },
           ),
-        )
+        ),
       ],
     );
+
   }
 }

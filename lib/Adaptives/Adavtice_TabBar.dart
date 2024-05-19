@@ -7,31 +7,31 @@ import '../Providers/global_Provider.dart';
 import '../Screens/Chat_Screen/Chat_Screen.dart';
 import '../Screens/Contact_Screen/Contact_Screen.dart';
 
-
 class AdaptiveTabBar extends StatelessWidget {
   const AdaptiveTabBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return (Provider.of<SwitchProvider>(context).isAndroid)
-        ? TabBarView(children: [
-      PersonAddTab(),
-      TabScreen(),
-      PersonAddTab(),
-      PersonAddTab(),
-    ])
+        ? TabBarView(
+        children: [
+            PersonAddTab(),
+            TabScreen(),
+            PersonAddTab(),
+            PersonAddTab(),
+          ])
         : CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(items: [
-        BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_add)),
-        BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.chat_bubble_text_fill),
-            label: "Chats"),
-        BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.phone), label: "Calls"),
-        BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.settings), label: "Settings"),
-      ]),
-      tabBuilder: (context, index) => screenList[index].screen,
-    );
+            tabBar: CupertinoTabBar(items: [
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_add)),
+              BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.chat_bubble_text_fill),
+                  label: "Chats"),
+              BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.phone), label: "Calls"),
+              BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.settings), label: "Settings"),
+            ]),
+            tabBuilder: (context, index) => screenList[index].screen,
+          );
   }
 }

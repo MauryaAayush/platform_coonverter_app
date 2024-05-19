@@ -20,40 +20,43 @@ class PersonAddTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Column(
-        children: [
-           Adaptive_CircleAvatar(),
-          SizedBox(
-            height: 30,
-          ),
-          AdaptiveTextField(
-            controller: txtFullName,
-            hintText: "Full Name",
-            icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                ? Icon(Icons.person)
-                : Icon(CupertinoIcons.person),
-          ),
-          AdaptiveTextField(
-            controller: txtPhoneNumber,
-            hintText: "Phone Number",
-            icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                ? Icon(Icons.phone)
-                : Icon(CupertinoIcons.phone),
-          ),
-          AdaptiveTextField(
-            controller: txtChatConversation,
-            hintText: "Chat Conversation",
-            icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                ? Icon(Icons.chat)
-                : Icon(CupertinoIcons.chat_bubble_text_fill),
-          ),
-          AdaptiveDateTime(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [AdaptiveSaveButton()],
-          )
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+             Adaptive_CircleAvatar(),
+            SizedBox(
+              height: 30,
+            ),
+            AdaptiveTextField(
+              controller: txtFullName,
+              hintText: "Full Name",
+              icon: (Provider.of<SwitchProvider>(context).isAndroid)
+                  ? Icon(Icons.person)
+                  : Icon(CupertinoIcons.person),
+            ),
+            AdaptiveTextField(
+              controller: txtPhoneNumber,
+              hintText: "Phone Number",
+              icon: (Provider.of<SwitchProvider>(context).isAndroid)
+                  ? Icon(Icons.phone)
+                  : Icon(CupertinoIcons.phone),
+            ),
+            AdaptiveTextField(
+              controller: txtChatConversation,
+              hintText: "Chat Conversation",
+              icon: (Provider.of<SwitchProvider>(context).isAndroid)
+                  ? Icon(Icons.chat)
+                  : Icon(CupertinoIcons.chat_bubble_text_fill),
+            ),
+            AdaptiveDateTime(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [AdaptiveSaveButton()],
+            )
 
-        ],
+          ],
+        ),
       ),
     );
   }

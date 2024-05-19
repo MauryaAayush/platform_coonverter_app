@@ -5,9 +5,9 @@ import '../Providers/Add_Contact_Provider.dart';
 import '../Providers/global_Provider.dart';
 
 class Adaptive_CircleAvatar extends StatelessWidget {
-  Adaptive_CircleAvatar({super.key});
+  Adaptive_CircleAvatar({super.key, this.radius = 70});
 
-  // double? radius, height, width;
+  double? radius, height, width;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class Adaptive_CircleAvatar extends StatelessWidget {
         Provider.of<PersonAddProvider>(context, listen: false).pickImage();
       },
       child: CircleAvatar(
-        radius: 50,
+        radius: radius,
         child: imgPath == null
             ? Icon(Icons.add_a_photo_outlined)
             : null,
