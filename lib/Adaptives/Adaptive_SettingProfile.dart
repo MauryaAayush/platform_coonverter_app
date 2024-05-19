@@ -62,23 +62,27 @@ class ProfileAdaptive extends StatelessWidget {
                       hintText: 'Enter your Name...'),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 TextFormField(
                     decoration: InputDecoration.collapsed(
                         hintText: 'Enter your Bio..')),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment:
                   MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         child: Text('Save')),
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+
+                        },
                         child: Text('Clear')),
                   ],
                 )
@@ -155,7 +159,8 @@ class ProfileAdaptive extends StatelessWidget {
                   children: [
                     CupertinoButton(
                       child: Text('Save'),
-                      onPressed: () {},
+                      onPressed: () {
+                      },
                     ),
                     CupertinoButton(
                       child: Text('Clear'),

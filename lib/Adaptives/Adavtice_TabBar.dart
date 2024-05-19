@@ -25,14 +25,10 @@ class AdaptiveTabBar extends StatelessWidget {
         : CupertinoTabScaffold(
       resizeToAvoidBottomInset: false,
             tabBar: CupertinoTabBar(items: [
-              BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_add)),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.chat_bubble_text_fill),
-                  label: "Chats"),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.phone), label: "Calls"),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.settings), label: "Settings"),
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_add),label: 'add'),
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.chat_bubble_2),label: 'chat'),
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.phone),label: 'call'),
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.settings),label: 'setting'),
             ]),
             tabBuilder: (context, index) => screenList[index].screen,
           );

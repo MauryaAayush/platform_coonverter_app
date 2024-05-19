@@ -9,13 +9,16 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
-      child: Column(
-        children: [
-          ProfileAdaptive(),
-          ThemeModeScreen(),
-        ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
+        child: Column(
+          children: [
+            ProfileAdaptive(),
+            ThemeModeScreen(),
+          ],
+        ),
       ),
     );
   }
