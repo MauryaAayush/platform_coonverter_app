@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../Providers/global_Provider.dart';
+import '../Screens/Contact_Screen/Contact_Screen.dart';
 
 class AdaptiveTextField extends StatelessWidget {
   const AdaptiveTextField(
@@ -20,8 +21,16 @@ class AdaptiveTextField extends StatelessWidget {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? Container(
             margin: EdgeInsets.symmetric(vertical: 10),
-            child: TextField(
+            child: TextFormField(
               controller: controller,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "required field";
+                } else {
+                  return null;
+                }
+              },
+              autocorrect: true,
               decoration: InputDecoration(
                   prefixIcon: icon,
                   hintText: hintText,
@@ -42,13 +51,21 @@ class AdaptiveTextField extends StatelessWidget {
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 10),
                   height: 50,
-                  child: CupertinoTextField(
+                  child: CupertinoTextFormFieldRow(
                     placeholder: hintText,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "required field";
+                      } else {
+                        return null;
+                      }
+                    },
                     controller: controller,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                            color: CupertinoColors.systemGrey, width: 1)),
+                    // decoration: BoxDecoration(
+                    //     borderRadius: BorderRadius.circular(10),
+                    //     border: Border.all(
+                    //         color: CupertinoColors.systemGrey, width: 1)
+                    // ),
                   ),
                 ),
               ),

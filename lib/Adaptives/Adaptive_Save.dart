@@ -18,16 +18,19 @@ class AdaptiveSaveButton extends StatelessWidget {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? OutlinedButton(
       onPressed: () {
-        Provider.of<ChatProvider>(context, listen: false).addData(
-          PersonDataModel(
-            chatConversation: txtChatConversation?.text ?? "",
-            name: txtFullName?.text ?? "",
-            phoneNumber: txtPhoneNumber?.text ?? "",
-            date: Provider.of<PersonAddProvider>(context, listen: false).dateTime ?? DateTime.now(),
-            timeOfDay: Provider.of<PersonAddProvider>(context, listen: false).timeOfDay ?? TimeOfDay.now(),
-          ),
-        );
-        Provider.of<PersonAddProvider>(context, listen: false).clearController();
+       if(key.currentState!.validate())
+         {
+           Provider.of<ChatProvider>(context, listen: false).addData(
+             PersonDataModel(
+               chatConversation: txtChatConversation?.text ?? "",
+               name: txtFullName?.text ?? "",
+               phoneNumber: txtPhoneNumber?.text ?? "",
+               date: Provider.of<PersonAddProvider>(context, listen: false).dateTime ?? DateTime.now(),
+               timeOfDay: Provider.of<PersonAddProvider>(context, listen: false).timeOfDay ?? TimeOfDay.now(),
+             ),
+           );
+           Provider.of<PersonAddProvider>(context, listen: false).clearController();
+         }
       },
       child: Text("Save"),
     )
@@ -46,16 +49,19 @@ class AdaptiveSaveButton extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        Provider.of<ChatProvider>(context, listen: false).addData(
-          PersonDataModel(
-            chatConversation: txtChatConversation?.text ?? "",
-            name: txtFullName?.text ?? "",
-            phoneNumber: txtPhoneNumber?.text ?? "",
-            date: Provider.of<PersonAddProvider>(context, listen: false).dateTime ?? DateTime.now(),
-            timeOfDay: Provider.of<PersonAddProvider>(context, listen: false).timeOfDay ?? TimeOfDay.now(),
-          ),
-        );
-        Provider.of<PersonAddProvider>(context, listen: false).clearController();
+        if(key.currentState!.validate())
+          {
+            Provider.of<ChatProvider>(context, listen: false).addData(
+              PersonDataModel(
+                chatConversation: txtChatConversation?.text ?? "",
+                name: txtFullName?.text ?? "",
+                phoneNumber: txtPhoneNumber?.text ?? "",
+                date: Provider.of<PersonAddProvider>(context, listen: false).dateTime ?? DateTime.now(),
+                timeOfDay: Provider.of<PersonAddProvider>(context, listen: false).timeOfDay ?? TimeOfDay.now(),
+              ),
+            );
+            Provider.of<PersonAddProvider>(context, listen: false).clearController();
+          }
       },
     );
   }

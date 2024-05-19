@@ -31,7 +31,6 @@ class AdaptiveDateTime extends StatelessWidget {
                         providerTrue.dateTime == null
                             ? "Pick Date"
                             : "${providerTrue.dateTime!.day.toString() + "-" + providerTrue.dateTime!.month.toString() + "-" + providerTrue.dateTime!.year.toString()}",
-                        style: TextStyle(color: Colors.black),
                       ))
                 ],
               ),
@@ -40,16 +39,17 @@ class AdaptiveDateTime extends StatelessWidget {
                   Icon(Icons.access_time),
                   TextButton(
                       onPressed: () async {
-                        providerFalse.setTime(timeOfDay: await showTimePicker(
-                                context: context,
-                                initialTime: TimeOfDay.now()) ??
-                            TimeOfDay.now());
+                        providerFalse.setTime(
+                            timeOfDay: await showTimePicker(
+                                    context: context,
+                                    initialTime: TimeOfDay.now()) ??
+                                TimeOfDay.now());
                       },
                       child: Text(
-                          providerTrue.timeOfDay == null
-                              ? "Pick Time"
-                              : "${providerTrue.timeOfDay!.hour.toString() + ":" + providerTrue.timeOfDay!.minute.toString()}",
-                          style: TextStyle(color: Colors.black)))
+                        providerTrue.timeOfDay == null
+                            ? "Pick Time"
+                            : "${providerTrue.timeOfDay!.hour.toString() + ":" + providerTrue.timeOfDay!.minute.toString()}",
+                      ))
                 ],
               ),
             ],
@@ -61,10 +61,10 @@ class AdaptiveDateTime extends StatelessWidget {
                   Icon(CupertinoIcons.calendar),
                   CupertinoButton(
                     child: Text(
-                        providerTrue.dateTime == null
-                            ? "Pick Date"
-                            : "${providerTrue.dateTime!.day.toString() + "-" + providerTrue.dateTime!.month.toString() + "-" + providerTrue.dateTime!.year.toString()}",
-                        style: TextStyle(color: CupertinoColors.black)),
+                      providerTrue.dateTime == null
+                          ? "Pick Date"
+                          : "${providerTrue.dateTime!.day.toString() + "-" + providerTrue.dateTime!.month.toString() + "-" + providerTrue.dateTime!.year.toString()}",
+                    ),
                     onPressed: () {
                       showCupertinoModalPopup(
                         context: context,
@@ -73,7 +73,7 @@ class AdaptiveDateTime extends StatelessWidget {
                           color: CupertinoColors.white,
                           child: CupertinoDatePicker(
                             onDateTimeChanged: (value) {
- providerFalse.setDate(value);
+                              providerFalse.setDate(value);
                             },
                           ),
                         ),
@@ -90,16 +90,20 @@ class AdaptiveDateTime extends StatelessWidget {
                       providerTrue.timeOfDay == null
                           ? "Pick Time"
                           : "${providerTrue.timeOfDay!.hour.toString() + ":" + providerTrue.timeOfDay!.minute.toString()}",
-                      style: TextStyle(color: CupertinoColors.black),
                     ),
                     onPressed: () {
-                      showCupertinoModalPopup(context: context, builder: (context) => Container(
-                        height: 200,
-                        color: CupertinoColors.white,
-                        child: CupertinoTimerPicker(onTimerDurationChanged: (value) {
-providerFalse.setTime(duration: value);
-                        },),
-                      ),);
+                      showCupertinoModalPopup(
+                        context: context,
+                        builder: (context) => Container(
+                          height: 200,
+                          color: CupertinoColors.white,
+                          child: CupertinoTimerPicker(
+                            onTimerDurationChanged: (value) {
+                              providerFalse.setTime(duration: value);
+                            },
+                          ),
+                        ),
+                      );
                     },
                   )
                 ],

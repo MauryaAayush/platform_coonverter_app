@@ -13,6 +13,8 @@ TextEditingController ?txtFullName = TextEditingController();
 TextEditingController ?txtPhoneNumber = TextEditingController();
 TextEditingController ?txtChatConversation = TextEditingController();
 
+GlobalKey<FormState> key = GlobalKey<FormState>();
+
 class PersonAddTab extends StatelessWidget {
   const PersonAddTab({super.key});
 
@@ -28,27 +30,36 @@ class PersonAddTab extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            AdaptiveTextField(
-              controller: txtFullName!,
-              hintText: "Full Name",
-              icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                  ? Icon(Icons.person)
-                  : Icon(CupertinoIcons.person),
+
+            Form(
+              key: key,
+              child: Column(
+                children: [
+                  AdaptiveTextField(
+                    controller: txtFullName!,
+                    hintText: "Full Name",
+                    icon: (Provider.of<SwitchProvider>(context).isAndroid)
+                        ? Icon(Icons.person)
+                        : Icon(CupertinoIcons.person),
+                  ),
+                  AdaptiveTextField(
+                    controller: txtPhoneNumber!,
+                    hintText: "Phone Number",
+                    icon: (Provider.of<SwitchProvider>(context).isAndroid)
+                        ? Icon(Icons.phone)
+                        : Icon(CupertinoIcons.phone),
+                  ),
+                  AdaptiveTextField(
+                    controller: txtChatConversation!,
+                    hintText: "Chat Conversation",
+                    icon: (Provider.of<SwitchProvider>(context).isAndroid)
+                        ? Icon(Icons.chat)
+                        : Icon(CupertinoIcons.chat_bubble_text_fill),
+                  ),
+                ],
+              ),
             ),
-            AdaptiveTextField(
-              controller: txtPhoneNumber!,
-              hintText: "Phone Number",
-              icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                  ? Icon(Icons.phone)
-                  : Icon(CupertinoIcons.phone),
-            ),
-            AdaptiveTextField(
-              controller: txtChatConversation!,
-              hintText: "Chat Conversation",
-              icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                  ? Icon(Icons.chat)
-                  : Icon(CupertinoIcons.chat_bubble_text_fill),
-            ),
+
             AdaptiveDateTime(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
