@@ -19,15 +19,15 @@ class AdaptiveTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
             prefixIcon: icon,
             hintText: hintText,
-            border: OutlineInputBorder(
+            border: const OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey)),
-            disabledBorder: OutlineInputBorder(
+            disabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey, width: 1))),
       ),
     )
