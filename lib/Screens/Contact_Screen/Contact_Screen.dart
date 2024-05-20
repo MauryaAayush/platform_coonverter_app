@@ -27,7 +27,7 @@ class PersonAddTab extends StatelessWidget {
           children: [
              Adaptive_CircleAvatar(
              ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
 
@@ -39,15 +39,15 @@ class PersonAddTab extends StatelessWidget {
                     controller: txtFullName!,
                     hintText: "Full Name",
                     icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                        ? Icon(Icons.person)
-                        : Icon(CupertinoIcons.person),
+                        ? const Icon(Icons.person)
+                        : const Icon(CupertinoIcons.person),
                   ),
                   AdaptiveTextField(
                     controller: txtPhoneNumber!,
                     hintText: "Phone Number",
                     icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                        ? Icon(Icons.phone)
-                        : Icon(CupertinoIcons.phone),
+                        ? const Icon(Icons.phone)
+                        : const Icon(CupertinoIcons.phone),
                   ),
                   AdaptiveTextField(
                     controller: txtChatConversation!,
