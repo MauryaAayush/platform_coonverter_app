@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-
 import '../../Adaptives/Adaptive_CirculeAvtar.dart';
 import '../../Adaptives/Adaptive_DateTime.dart';
 import '../../Adaptives/Adaptive_Save.dart';
@@ -26,7 +25,8 @@ class PersonAddTab extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-             Adaptive_CircleAvatar(),
+             Adaptive_CircleAvatar(
+             ),
             SizedBox(
               height: 30,
             ),
@@ -61,6 +61,7 @@ class PersonAddTab extends StatelessWidget {
             ),
 
             AdaptiveDateTime(),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [AdaptiveSaveButton()],

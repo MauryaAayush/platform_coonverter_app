@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../Models/Screen_Model.dart';
 import '../Providers/global_Provider.dart';
 
 class Adaptive_Scaffold extends StatelessWidget {
@@ -13,28 +14,43 @@ class Adaptive_Scaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final providerTrue = Provider.of<SwitchProvider>(context);
     final providerFalse = Provider.of<SwitchProvider>(context, listen: false);
-    return (Provider.of<SwitchProvider>(context).isAndroid)
+    return (Provider
+        .of<SwitchProvider>(context)
+        .isAndroid)
         ? DefaultTabController(
-            length: 4,
-            child: Scaffold(
-              body: body,
-              appBar: appBar(providerTrue, providerFalse),
-            ),
-          )
-        : CupertinoPageScaffold(
-            navigationBar: CupertinoNavigationBar(
-              border: null,
-              backgroundColor: CupertinoColors.systemGrey6,
-              middle: Text("Platform Convertor"),
-              trailing: CupertinoSwitch(
-                onChanged: (value) {
-                  providerFalse.changePlatform(value);
-                },
-                value: providerTrue.isAndroid,
+      length: 4,
+      child: Scaffold(
+        body: body,
+        appBar: appBar(providerTrue, providerFalse),
+      ),
+    )
+        : CupertinoTabScaffold(
+      resizeToAvoidBottomInset: false,
+      tabBar: CupertinoTabBar(items: [
+        BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.person_add), label: 'add'),
+        BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.chat_bubble_2), label: 'chat'),
+        BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.phone), label: 'call'),
+        BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.settings), label: 'setting'),
+      ]),
+      tabBuilder: (context, index) =>
+          CupertinoPageScaffold(
+              navigationBar: CupertinoNavigationBar(
+                border: null,
+                backgroundColor: CupertinoColors.systemGrey3,
+                middle: Text('Platform Convertor'),
+                trailing: CupertinoSwitch(
+                  value: providerTrue.isAndroid,
+                  onChanged: (value) {
+                    providerFalse.changePlatform(value);
+                  },
+                ),
               ),
-            ),
-            child: body,
-          );
+              child: screenList[index].screen),
+    );
   }
 
   AppBar appBar(SwitchProvider providerTrue, SwitchProvider providerFalse) {
@@ -65,4 +81,6 @@ class Adaptive_Scaffold extends StatelessWidget {
       ]),
     );
   }
+
+
 }

@@ -17,7 +17,7 @@ List<ScreenModels> screenList = [
       screen: const PersonAddTab()
   ),
   ScreenModels(
-      screen: const TabScreen()
+      screen: const ChatScreen()
   ),
   ScreenModels(
       screen: const CallScreen()

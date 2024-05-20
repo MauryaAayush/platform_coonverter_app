@@ -1,10 +1,7 @@
 import 'dart:io';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../Screens/Contact_Screen/Contact_Screen.dart';
-
 
 class PersonAddProvider extends ChangeNotifier {
   DateTime? dateTime;
@@ -12,6 +9,7 @@ class PersonAddProvider extends ChangeNotifier {
   Duration? duration;
   ImagePicker _imagePicker = ImagePicker();
   File? imgpath;
+
   void setDate(DateTime? dateTime) {
     this.dateTime = dateTime;
     notifyListeners();
@@ -26,8 +24,6 @@ class PersonAddProvider extends ChangeNotifier {
       final int minutes = duration.inMinutes % 60;
       this.timeOfDay = TimeOfDay(hour: hours, minute: minutes);
     }
-
-
     notifyListeners();
   }
 

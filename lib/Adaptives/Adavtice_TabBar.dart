@@ -14,23 +14,19 @@ class AdaptiveTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final providerTrue = Provider.of<SwitchProvider>(context);
+    final providerFalse = Provider.of<SwitchProvider>(context, listen: false);
+
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? TabBarView(
         children: [
             PersonAddTab(),
-            TabScreen(),
-          CallScreen(),
+            ChatScreen(),
+            CallScreen(),
             SettingScreen(),
           ])
-        : CupertinoTabScaffold(
-      resizeToAvoidBottomInset: false,
-            tabBar: CupertinoTabBar(items: [
-              BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_add),label: 'add'),
-              BottomNavigationBarItem(icon: Icon(CupertinoIcons.chat_bubble_2),label: 'chat'),
-              BottomNavigationBarItem(icon: Icon(CupertinoIcons.phone),label: 'call'),
-              BottomNavigationBarItem(icon: Icon(CupertinoIcons.settings),label: 'setting'),
-            ]),
-            tabBuilder: (context, index) => screenList[index].screen,
-          );
+        : Container();
   }
 }
+
+

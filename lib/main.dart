@@ -12,10 +12,15 @@ void main() {
     ChangeNotifierProvider(
       create: (context) => SwitchProvider(),
     ),
-    ChangeNotifierProvider(create: (context) => ChatProvider(),),
-    ChangeNotifierProvider(create: (context) => PersonAddProvider(),),
-    ChangeNotifierProvider(create: (context) => ProfileProvider(),)
-
+    ChangeNotifierProvider(
+      create: (context) => ChatProvider(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => PersonAddProvider(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => ProfileProvider(),
+    ),
   ], child: MyApp()));
 }
 

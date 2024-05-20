@@ -61,11 +61,6 @@ class AdaptiveTextField extends StatelessWidget {
                       }
                     },
                     controller: controller,
-                    // decoration: BoxDecoration(
-                    //     borderRadius: BorderRadius.circular(10),
-                    //     border: Border.all(
-                    //         color: CupertinoColors.systemGrey, width: 1)
-                    // ),
                   ),
                 ),
               ),

@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../../../Providers/global_Provider.dart';
 
 class AdaptiveTextField extends StatelessWidget {
+
   const AdaptiveTextField(
       {super.key,
         required this.controller,

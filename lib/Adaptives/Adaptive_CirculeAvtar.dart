@@ -1,66 +1,80 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../Providers/Add_Contact_Provider.dart';
+import '../Providers/Chat_Screen_Provider.dart';
 import '../Providers/global_Provider.dart';
 
-class Adaptive_CircleAvatar extends StatelessWidget {
-  Adaptive_CircleAvatar({
-    super.key,
-    this.radius = 70,
-    this.height = 150,
-    this.width = 150,
-  });
 
-  final double? radius, height, width;
+class Adaptive_CircleAvatar extends StatelessWidget {
+  Adaptive_CircleAvatar(
+      {super.key,
+        this.radius = 60,
+        this.height = 110,
+        this.width = 110,
+        this.isForChatAndCall = false,
+        this.index = 0});
+  double? radius, height, width;
+  final bool isForChatAndCall;
+  int index;
 
   @override
   Widget build(BuildContext context) {
-    bool isAndroid =
-        Provider.of<SwitchProvider>(context, listen: true).isAndroid;
-    var personAddProvider =
-        Provider.of<PersonAddProvider>(context, listen: true);
-    var imgPath = personAddProvider.imgpath;
-
-    return isAndroid
+    return (Provider.of<SwitchProvider>(context).isAndroid)
         ? InkWell(
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            radius: 50,
-            onTap: () {
-              Provider.of<PersonAddProvider>(context, listen: false)
-                  .pickImage();
-            },
-            child: CircleAvatar(
-              radius: radius,
-              child: imgPath == null ? Icon(Icons.add_a_photo_outlined) : null,
-              backgroundImage: imgPath == null ? null : FileImage(imgPath),
-            ),
-          )
+      radius: radius,
+      onTap: () {
+        Provider.of<PersonAddProvider>(context, listen: false)
+            .pickImage();
+      },
+      child: CircleAvatar(
+          radius: radius,
+          child: Provider.of<PersonAddProvider>(context).imgpath == null
+              ? Icon(Icons.add_a_photo_outlined)
+              : null,
+          backgroundImage: !isForChatAndCall
+              ? Provider.of<PersonAddProvider>(context).imgpath == null
+              ? null
+              : FileImage(
+              Provider.of<PersonAddProvider>(context).imgpath!)
+              : Provider.of<ChatProvider>(
+            context,
+          ).personData[index].imgPath !=
+              null
+              ? FileImage(Provider.of<ChatProvider>(
+            context,
+          ).personData[index].imgPath!)
+              : null),
+    )
         : CupertinoButton(
-            onPressed: () {
-              Provider.of<PersonAddProvider>(context, listen: false)
-                  .pickImage();
-            },
-            child: ClipOval(
-              child: Container(
-                height: height,
-                width: width,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: CupertinoColors.activeGreen,
-                  image: imgPath == null
-                      ? null
-                      : DecorationImage(fit: BoxFit.cover,image: FileImage(imgPath)),
-                ),
-                child: imgPath == null
-                    ? Icon(
-                        CupertinoIcons.camera,
-                        color: CupertinoColors.white,
-                      )
-                    : null,
-              ),
-            ),
-          );
+      onPressed: () {
+        Provider.of<PersonAddProvider>(context, listen: false)
+            .pickImage();
+      },
+      child: ClipOval(
+        child: Container(
+          height: height,
+          width: width,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: CupertinoColors.activeBlue,
+              image:
+              Provider.of<PersonAddProvider>(context).imgpath != null
+                  ? DecorationImage(
+                  fit: BoxFit.cover,
+                  image: FileImage(
+                      Provider.of<PersonAddProvider>(context)
+                          .imgpath!))
+                  : null),
+          child: Provider.of<PersonAddProvider>(context).imgpath == null
+              ? Icon(
+            CupertinoIcons.camera,
+            color: CupertinoColors.white,
+          )
+              : null,
+        ),
+      ),
+    );
   }
 }
