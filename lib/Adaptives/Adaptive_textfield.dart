@@ -45,16 +45,16 @@ class AdaptiveTextField extends StatelessWidget {
         : Row(
             children: [
               icon,
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 10),
+                  margin: const EdgeInsets.symmetric(vertical: 10),
                   height: 50,
                   child: CupertinoTextFormFieldRow(
                     placeholder: hintText,
-                    padding: EdgeInsets.symmetric(vertical: 0),
+                    padding: const EdgeInsets.symmetric(vertical: 0),
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "required field";
