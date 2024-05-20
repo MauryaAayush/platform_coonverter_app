@@ -19,7 +19,7 @@ class AdaptiveTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? Container(
-            margin: EdgeInsets.symmetric(vertical: 13,horizontal: 5),
+            margin: const EdgeInsets.symmetric(vertical: 13,horizontal: 5),
 
             child: TextFormField(
               controller: controller,
@@ -37,8 +37,8 @@ class AdaptiveTextField extends StatelessWidget {
                   labelText: hintText,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(color: Colors.grey)),
-                  disabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Colors.grey)),
+                  disabledBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey, width: 1))),
             ),
           )
