@@ -34,12 +34,12 @@ class AdaptiveTextField extends StatelessWidget {
         : Row(
       children: [
         icon,
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Expanded(
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: 10),
+            margin: const EdgeInsets.symmetric(vertical: 10),
             height: 50,
             child: CupertinoTextField(
               placeholder: hintText,
