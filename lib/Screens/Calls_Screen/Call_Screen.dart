@@ -11,7 +11,13 @@
     Widget build(BuildContext context) {
       final providerTrue = Provider.of<ChatProvider>(context);
 
-      return Column(
+      return (providerTrue.personData.isEmpty)
+          ? Center(
+          child: Text(
+            '!! No any call !!',
+            style: TextStyle(fontSize: 18),
+          ))
+          : Column(
         children: [
           ...List.generate(
               providerTrue.personData.length,
