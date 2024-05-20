@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../Providers/global_Provider.dart';
-import '../Screens/Contact_Screen/Contact_Screen.dart';
+
 
 class AdaptiveTextField extends StatelessWidget {
   const AdaptiveTextField(
@@ -20,7 +19,8 @@ class AdaptiveTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? Container(
-            margin: EdgeInsets.symmetric(vertical: 10),
+            margin: EdgeInsets.symmetric(vertical: 13,horizontal: 5),
+
             child: TextFormField(
               controller: controller,
               validator: (value) {
@@ -36,6 +36,7 @@ class AdaptiveTextField extends StatelessWidget {
                   hintText: hintText,
                   labelText: hintText,
                   border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
                       borderSide: BorderSide(color: Colors.grey)),
                   disabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey, width: 1))),
@@ -53,6 +54,7 @@ class AdaptiveTextField extends StatelessWidget {
                   height: 50,
                   child: CupertinoTextFormFieldRow(
                     placeholder: hintText,
+                    padding: EdgeInsets.symmetric(vertical: 0),
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "required field";
@@ -61,6 +63,7 @@ class AdaptiveTextField extends StatelessWidget {
                       }
                     },
                     controller: controller,
+
                   ),
                 ),
               ),

@@ -16,6 +16,9 @@ class SettingScreen extends StatelessWidget {
         child: Column(
           children: [
             ProfileAdaptive(),
+            SizedBox(
+              height: 20,
+            ),
             ThemeModeScreen(),
           ],
         ),
