@@ -53,16 +53,16 @@ class PersonAddTab extends StatelessWidget {
                     controller: txtChatConversation!,
                     hintText: "Chat Conversation",
                     icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                        ? Icon(Icons.chat)
-                        : Icon(CupertinoIcons.chat_bubble_text_fill),
+                        ? const Icon(Icons.chat)
+                        : const Icon(CupertinoIcons.chat_bubble_text_fill),
                   ),
                 ],
               ),
             ),
 
-            AdaptiveDateTime(),
+            const AdaptiveDateTime(),
 
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [AdaptiveSaveButton()],
             )
