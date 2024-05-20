@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platform_coonverter_app/Screens/Contact_Screen/Contact_Screen.dart';
 import 'package:provider/provider.dart';
 import '../Providers/Profile_Provider.dart';
 import '../Providers/global_Provider.dart';
@@ -58,6 +59,7 @@ class ProfileAdaptive extends StatelessWidget {
                   height: 20,
                 ),
                 TextFormField(
+                  controller: txtFullName,
                   decoration: InputDecoration.collapsed(
                       hintText: 'Enter your Name...'),
                 ),
@@ -65,6 +67,7 @@ class ProfileAdaptive extends StatelessWidget {
                   height: 40,
                 ),
                 TextFormField(
+                  controller: txtbio,
                     decoration: InputDecoration.collapsed(
                         hintText: 'Enter your Bio..')),
                 SizedBox(
@@ -76,12 +79,11 @@ class ProfileAdaptive extends StatelessWidget {
                   children: [
                     ElevatedButton(
                         onPressed: () {
-                          Navigator.pop(context);
                         },
                         child: Text('Save')),
                     ElevatedButton(
                         onPressed: () {
-
+                        profileProviderfalse.clearprofile();
                         },
                         child: Text('Clear')),
                   ],

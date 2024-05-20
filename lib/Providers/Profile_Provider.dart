@@ -20,6 +20,13 @@ class ProfileProvider extends ChangeNotifier
     notifyListeners();
   }
 
+  void clearprofile()
+  {
+    profileimgpath = null;
+    txtfullname=TextEditingController(text: '');
+    txtbio=TextEditingController(text: '');
+    notifyListeners();
+  }
 
   void changeColor(bool value)
   {

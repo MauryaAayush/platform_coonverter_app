@@ -10,6 +10,7 @@ import '../../Providers/global_Provider.dart';
 TextEditingController ?txtFullName = TextEditingController();
 TextEditingController ?txtPhoneNumber = TextEditingController();
 TextEditingController ?txtChatConversation = TextEditingController();
+TextEditingController ?txtbio= TextEditingController();
 
 GlobalKey<FormState> key = GlobalKey<FormState>();
 
