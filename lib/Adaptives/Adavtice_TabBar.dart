@@ -18,7 +18,7 @@ class AdaptiveTabBar extends StatelessWidget {
     final providerFalse = Provider.of<SwitchProvider>(context, listen: false);
 
     return (Provider.of<SwitchProvider>(context).isAndroid)
-        ? TabBarView(
+        ? const TabBarView(
         children: [
             PersonAddTab(),
             ChatScreen(),
