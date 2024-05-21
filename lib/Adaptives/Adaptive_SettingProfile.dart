@@ -59,17 +59,17 @@ class ProfileAdaptive extends StatelessWidget {
                 ),
                 TextFormField(
                   controller: profileProvidertrue.txtfullname,
-                  decoration: InputDecoration.collapsed(
+                  decoration: const InputDecoration.collapsed(
                       hintText: 'Enter your Name...'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 TextFormField(
                   controller: profileProvidertrue.txtbio,
-                    decoration: InputDecoration.collapsed(
+                    decoration: const InputDecoration.collapsed(
                         hintText: 'Enter your Bio..')),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
