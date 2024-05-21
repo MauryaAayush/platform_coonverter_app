@@ -22,9 +22,9 @@ class ProfileAdaptive extends StatelessWidget {
         ? Column(
       children: [
         ListTile(
-          leading: Icon(Icons.person_outline),
-          title: Text('Profile'),
-          subtitle: Text('Update Profile Data'),
+          leading: const Icon(Icons.person_outline),
+          title: const Text('Profile'),
+          subtitle: const Text('Update Profile Data'),
           trailing: Switch(
             value: profileProvidertrue.isProfile,
             onChanged: (value) {
