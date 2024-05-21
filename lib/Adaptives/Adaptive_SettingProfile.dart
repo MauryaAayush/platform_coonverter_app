@@ -79,12 +79,12 @@ class ProfileAdaptive extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {
                         },
-                        child: Text('Save')),
+                        child: const Text('Save')),
                     ElevatedButton(
                         onPressed: () {
                         profileProviderfalse.clearprofile();
                         },
-                        child: Text('Clear')),
+                        child: const Text('Clear')),
                   ],
                 )
               ],
