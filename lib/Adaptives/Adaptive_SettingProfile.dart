@@ -59,7 +59,7 @@ class ProfileAdaptive extends StatelessWidget {
                   height: 20,
                 ),
                 TextFormField(
-                  controller: txtFullName,
+                  controller: profileProvidertrue.txtfullname,
                   decoration: InputDecoration.collapsed(
                       hintText: 'Enter your Name...'),
                 ),
@@ -67,7 +67,7 @@ class ProfileAdaptive extends StatelessWidget {
                   height: 40,
                 ),
                 TextFormField(
-                  controller: txtbio,
+                  controller: profileProvidertrue.txtbio,
                     decoration: InputDecoration.collapsed(
                         hintText: 'Enter your Bio..')),
                 SizedBox(
