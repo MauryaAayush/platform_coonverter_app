@@ -49,12 +49,12 @@ class ProfileAdaptive extends StatelessWidget {
                       radius: 60,
                       backgroundImage: FileImage(
                           profileProvidertrue.profileimgpath!))
-                      : CircleAvatar(
+                      : const CircleAvatar(
                       radius: 60,
 
                   child: Icon(Icons.add_a_photo_outlined),),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextFormField(
