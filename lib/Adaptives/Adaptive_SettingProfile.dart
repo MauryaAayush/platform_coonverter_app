@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:platform_coonverter_app/Screens/Contact_Screen/Contact_Screen.dart';
 import 'package:provider/provider.dart';
 import '../Providers/Profile_Provider.dart';
 import '../Providers/global_Provider.dart';
@@ -103,13 +102,13 @@ class ProfileAdaptive extends StatelessWidget {
           title: Text('Profile'),
           subtitle: Text('Update Profile Data'),
           trailing: CupertinoSwitch(
-            value: profileProvidertrue!.isProfile,
+            value: profileProvidertrue.isProfile,
             onChanged: (value) {
-              profileProviderfalse!.profileshow(value);
+              profileProviderfalse.profileshow(value);
             },
           ),
         ),
-        (profileProvidertrue!.isProfile)
+        (profileProvidertrue.isProfile)
             ? Padding(
           padding:
           const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -119,13 +118,13 @@ class ProfileAdaptive extends StatelessWidget {
               children: [
                 CupertinoButton(
                   onPressed: () {
-                    profileProviderfalse!.profileImage();
+                    profileProviderfalse.profileImage();
                   },
-                  child: (profileProvidertrue!.profileimgpath != null)
+                  child: (profileProvidertrue.profileimgpath != null)
                       ? CircleAvatar(
                       radius: 60,
                       backgroundImage: FileImage(
-                          profileProvidertrue!.profileimgpath!))
+                          profileProvidertrue.profileimgpath!))
                       : CircleAvatar(
                       radius: 60,
                       backgroundColor: CupertinoColors.activeGreen,
