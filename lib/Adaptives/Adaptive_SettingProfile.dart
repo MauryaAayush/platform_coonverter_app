@@ -98,9 +98,9 @@ class ProfileAdaptive extends StatelessWidget {
         : Column(
       children: [
         CupertinoListTile(
-          leading: Icon(CupertinoIcons.person),
-          title: Text('Profile'),
-          subtitle: Text('Update Profile Data'),
+          leading: const Icon(CupertinoIcons.person),
+          title: const Text('Profile'),
+          subtitle: const Text('Update Profile Data'),
           trailing: CupertinoSwitch(
             value: profileProvidertrue.isProfile,
             onChanged: (value) {
@@ -125,46 +125,46 @@ class ProfileAdaptive extends StatelessWidget {
                       radius: 60,
                       backgroundImage: FileImage(
                           profileProvidertrue.profileimgpath!))
-                      : CircleAvatar(
+                      : const CircleAvatar(
                       radius: 60,
                       backgroundColor: CupertinoColors.activeGreen,
                       child: Icon(CupertinoIcons.photo_camera,color: CupertinoColors.white,),
 
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 CupertinoTextField(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   placeholder: 'Enter Your Name..',
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(3),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 CupertinoTextField(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   placeholder: 'Enter Your Bio..',
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(3),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CupertinoButton(
-                      child: Text('Save'),
+                      child: const Text('Save'),
                       onPressed: () {
                       },
                     ),
                     CupertinoButton(
-                      child: Text('Clear'),
+                      child: const Text('Clear'),
                       onPressed: () {},
                     )
                   ],
