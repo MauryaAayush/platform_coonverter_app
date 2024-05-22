@@ -38,7 +38,7 @@ class Adaptive_Scaffold extends StatelessWidget {
                 navigationBar: CupertinoNavigationBar(
                   border: null,
                   backgroundColor: CupertinoColors.systemGrey3,
-                  middle: Text('Platform Convertor'),
+                  middle: const Text('Platform Convertor'),
                   trailing: CupertinoSwitch(
                     value: providerTrue.isAndroid,
                     onChanged: (value) {
