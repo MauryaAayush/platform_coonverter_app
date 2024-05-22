@@ -55,7 +55,7 @@ class AdaptiveListTile extends StatelessWidget {
                   'tel: +91 ${providerTrue.personData[index].phoneNumber}');
               url.launchUrl(uri);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.call,
               color: Colors.green,
             )),
