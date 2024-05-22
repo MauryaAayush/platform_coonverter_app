@@ -64,8 +64,7 @@ class AdaptiveSaveButton extends StatelessWidget {
                          imgPath:
                          Provider.of<
                              PersonAddProvider>(context, listen: false)
-                             .imgpath ??
-                             null,
+                             .imgpath,
                          chatConversation:
                          txtChatConversation !=
                              null
