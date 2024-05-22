@@ -17,7 +17,7 @@ class ThemeModeScreen extends StatelessWidget {
       return (Provider.of<SwitchProvider>(context).isAndroid)
 
         ? ListTile(
-        leading: Icon(Icons.sunny),
+        leading: const Icon(Icons.sunny),
         title: Text('Theme'),
         subtitle: Text('Change Theme'),
         trailing: Switch(
