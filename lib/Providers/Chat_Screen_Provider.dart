@@ -148,7 +148,7 @@ class ChatProvider extends ChangeNotifier {
                         ),
                       );
                     },
-                    icon: Icon(Icons.edit)),
+                    icon: const Icon(Icons.edit)),
                 IconButton(
                     onPressed: () {
                       Navigator.pop(context);
