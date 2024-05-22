@@ -50,12 +50,6 @@ class ChatProvider extends ChangeNotifier {
             ),
             CircleAvatar(
               radius: 50,
-              child: Provider.of<ChatProvider>(
-                context,
-              ).personData[index].imgPath ==
-                  null
-                  ? Icon(Icons.add_a_photo_outlined)
-                  : null,
               backgroundImage: Provider.of<ChatProvider>(
                 context,
               ).personData[index].imgPath !=
@@ -63,6 +57,12 @@ class ChatProvider extends ChangeNotifier {
                   ? FileImage(Provider.of<ChatProvider>(
                 context,
               ).personData[index].imgPath!)
+                  : null,
+              child: Provider.of<ChatProvider>(
+                context,
+              ).personData[index].imgPath ==
+                  null
+                  ? Icon(Icons.add_a_photo_outlined)
                   : null,
             ),
             Text(
