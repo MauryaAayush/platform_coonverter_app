@@ -18,7 +18,7 @@ class AdaptiveDateTime extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.calendar_month),
+                  const Icon(Icons.calendar_month),
                   TextButton(
                       onPressed: () async {
                         providerFalse.setDate(await showDatePicker(
