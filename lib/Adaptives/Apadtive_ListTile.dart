@@ -97,7 +97,7 @@ class AdaptiveListTile extends StatelessWidget {
                     : null,
               ),
               child: providerTrue.personData[index].imgPath == null
-                  ? Icon(
+                  ? const Icon(
                 CupertinoIcons.camera,
                 color: CupertinoColors.white,
               )
