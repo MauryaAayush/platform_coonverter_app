@@ -113,8 +113,8 @@ class ChatProvider extends ChangeNotifier {
                                   controller: txtChatConversation!,
                                   hintText: "Chat Conversation",
                                   icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                                      ? Icon(Icons.chat)
-                                      : Icon(CupertinoIcons.chat_bubble_text_fill),
+                                      ? const Icon(Icons.chat)
+                                      : const Icon(CupertinoIcons.chat_bubble_text_fill),
                                 ),
                               ],
                             ),
