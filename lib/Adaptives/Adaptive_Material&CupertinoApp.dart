@@ -19,8 +19,8 @@ class Adaptive_Materail_CupertinoApp extends StatelessWidget {
     return (!Provider.of<SwitchProvider>(context).isAndroid)
         ? CupertinoApp(
             theme: profileProvidertrue.isdark
-                ? CupertinoThemeData(brightness: Brightness.light)
-                : CupertinoThemeData(brightness: Brightness.dark),
+                ? const CupertinoThemeData(brightness: Brightness.light)
+                : const CupertinoThemeData(brightness: Brightness.dark),
             debugShowCheckedModeBanner: false,
             home: scaffold,
           )
