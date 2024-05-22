@@ -23,7 +23,7 @@ class AdaptiveListTile extends StatelessWidget {
 
     return (Provider.of<SwitchProvider>(context).isAndroid)
         ? Container(
-      margin: EdgeInsets.symmetric(vertical: 3),
+      margin: const EdgeInsets.symmetric(vertical: 3),
       child: ListTile(
         onLongPress: () {
           providerFalse.bottomSheet(
