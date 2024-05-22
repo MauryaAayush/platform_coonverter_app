@@ -257,7 +257,7 @@ class ChatProvider extends ChangeNotifier {
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text("Cancel")),
+                                child: const Text("Cancel")),
                             CupertinoButton(
                                 onPressed: () {
                                   providerFalse.updateData(
