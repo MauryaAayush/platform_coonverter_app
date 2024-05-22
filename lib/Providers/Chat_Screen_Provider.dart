@@ -287,7 +287,7 @@ class ChatProvider extends ChangeNotifier {
                       Navigator.pop(context);
                       providerFalse.deleteData(index);
                     },
-                    child: Icon(Icons.delete))
+                    child: const Icon(Icons.delete))
               ],
             ),
             CupertinoButton(
