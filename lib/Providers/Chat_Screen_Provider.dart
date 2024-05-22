@@ -17,7 +17,7 @@ class ChatProvider extends ChangeNotifier {
 
   Future<void> deleteData(int index) async {
     if (index >= 0 && index < personData.length) {
-      await Future.delayed(Duration(milliseconds: 200)); // Addi
+      await Future.delayed(const Duration(milliseconds: 200)); // Addi
       personData.removeAt(index);
     }
     notifyListeners();
