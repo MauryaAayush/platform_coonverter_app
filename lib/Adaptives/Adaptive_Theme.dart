@@ -18,7 +18,7 @@ class ThemeModeScreen extends StatelessWidget {
 
         ? ListTile(
         leading: const Icon(Icons.sunny),
-        title: Text('Theme'),
+        title: const Text('Theme'),
         subtitle: Text('Change Theme'),
         trailing: Switch(
           value: profileProvidertrue.isdark,
