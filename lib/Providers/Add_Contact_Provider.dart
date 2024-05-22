@@ -7,7 +7,7 @@ class PersonAddProvider extends ChangeNotifier {
   DateTime? dateTime;
   TimeOfDay? timeOfDay;
   Duration? duration;
-  ImagePicker _imagePicker = ImagePicker();
+  final ImagePicker _imagePicker = ImagePicker();
   File? imgpath;
 
   void setDate(DateTime? dateTime) {
