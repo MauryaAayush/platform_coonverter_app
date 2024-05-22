@@ -24,8 +24,7 @@ class AdaptiveSaveButton extends StatelessWidget {
                      PersonDataModel(
                          imgPath:
                          Provider.of<PersonAddProvider>(context, listen: false)
-                             .imgpath ??
-                             null,
+                             .imgpath,
                          chatConversation: txtChatConversation?.text ?? "",
                          name: txtFullName != null ? txtFullName!.text : "",
                          phoneNumber:
@@ -44,7 +43,7 @@ class AdaptiveSaveButton extends StatelessWidget {
                      .clearController();
                }
             },
-            child: Text("Save"))
+            child: const Text("Save"))
         : CupertinoButton(
             child: Container(
                 height: 45,
