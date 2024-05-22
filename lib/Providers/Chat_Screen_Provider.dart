@@ -67,7 +67,7 @@ class ChatProvider extends ChangeNotifier {
             ),
             Text(
               providerTrue.personData[index].name.toString(),
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
             Text(
               providerTrue.personData[index].chatConversation.toString(),
