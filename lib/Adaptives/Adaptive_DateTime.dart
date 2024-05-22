@@ -30,13 +30,13 @@ class AdaptiveDateTime extends StatelessWidget {
                       child: Text(
                         providerTrue.dateTime == null
                             ? "Pick Date"
-                            : "${providerTrue.dateTime!.day.toString() + "-" + providerTrue.dateTime!.month.toString() + "-" + providerTrue.dateTime!.year.toString()}",
+                            : "${providerTrue.dateTime!.day}-${providerTrue.dateTime!.month}-${providerTrue.dateTime!.year}",
                       ))
                 ],
               ),
               Row(
                 children: [
-                  Icon(Icons.access_time),
+                  const Icon(Icons.access_time),
                   TextButton(
                       onPressed: () async {
                         providerFalse.setTime(
@@ -48,7 +48,7 @@ class AdaptiveDateTime extends StatelessWidget {
                       child: Text(
                         providerTrue.timeOfDay == null
                             ? "Pick Time"
-                            : "${providerTrue.timeOfDay!.hour.toString() + ":" + providerTrue.timeOfDay!.minute.toString()}",
+                            : providerTrue.timeOfDay!.hour.toString() + ":" + providerTrue.timeOfDay!.minute.toString(),
                       ))
                 ],
               ),
