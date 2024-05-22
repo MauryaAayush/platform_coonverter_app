@@ -106,8 +106,8 @@ class ChatProvider extends ChangeNotifier {
                                   controller: txtPhoneNumber!,
                                   hintText: "Phone Number",
                                   icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                                      ? Icon(Icons.phone)
-                                      : Icon(CupertinoIcons.phone),
+                                      ? const Icon(Icons.phone)
+                                      : const Icon(CupertinoIcons.phone),
                                 ),
                                 AdaptiveTextField(
                                   controller: txtChatConversation!,
