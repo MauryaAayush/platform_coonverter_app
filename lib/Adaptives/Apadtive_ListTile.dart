@@ -42,7 +42,7 @@ class AdaptiveListTile extends StatelessWidget {
               ? FileImage(providerTrue.personData[index].imgPath!)
               : null,
           child: providerTrue.personData[index].imgPath == null
-              ? Icon(Icons.add_a_photo_outlined)
+              ? const Icon(Icons.add_a_photo_outlined)
               : null,
         ),
         onTap: () {},
