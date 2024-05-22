@@ -63,7 +63,7 @@ class AdaptiveDateTime extends StatelessWidget {
                     child: Text(
                       providerTrue.dateTime == null
                           ? "Pick Date"
-                          : "${providerTrue.dateTime!.day.toString() + "-" + providerTrue.dateTime!.month.toString() + "-" + providerTrue.dateTime!.year.toString()}",
+                          : providerTrue.dateTime!.day.toString() + "-" + providerTrue.dateTime!.month.toString() + "-" + providerTrue.dateTime!.year.toString(),
                     ),
                     onPressed: () {
                       showCupertinoModalPopup(
