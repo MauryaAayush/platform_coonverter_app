@@ -109,7 +109,7 @@ class AdaptiveListTile extends StatelessWidget {
               style: TextStyle(fontSize: 15),
             )
                 : CupertinoButton(
-              child: Icon(
+              child: const Icon(
                 CupertinoIcons.phone,
                 color: CupertinoColors.activeGreen,
               ),
