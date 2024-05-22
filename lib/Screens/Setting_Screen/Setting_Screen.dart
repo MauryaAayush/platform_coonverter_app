@@ -9,9 +9,9 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.vertical,
-      child: const Padding(
+      child: Padding(
         padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
         child: Column(
           children: [
