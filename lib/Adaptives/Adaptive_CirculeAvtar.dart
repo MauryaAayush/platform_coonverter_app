@@ -30,9 +30,6 @@ class Adaptive_CircleAvatar extends StatelessWidget {
       },
       child: CircleAvatar(
           radius: radius,
-          child: Provider.of<PersonAddProvider>(context).imgpath == null
-              ? Icon(Icons.add_a_photo_outlined)
-              : null,
           backgroundImage: !isForChatAndCall
               ? Provider.of<PersonAddProvider>(context).imgpath == null
               ? null
@@ -45,6 +42,9 @@ class Adaptive_CircleAvatar extends StatelessWidget {
               ? FileImage(Provider.of<ChatProvider>(
             context,
           ).personData[index].imgPath!)
+              : null,
+          child: Provider.of<PersonAddProvider>(context).imgpath == null
+              ? Icon(Icons.add_a_photo_outlined)
               : null),
     )
         : CupertinoButton(
