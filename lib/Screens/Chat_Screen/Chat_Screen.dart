@@ -12,7 +12,7 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final providerTrue = Provider.of<ChatProvider>(context);
     return (providerTrue.personData.isEmpty)
-        ? Center(
+        ? const Center(
             child: Text(
             '!! No any conversation !!',
             style: TextStyle(fontSize: 18),
