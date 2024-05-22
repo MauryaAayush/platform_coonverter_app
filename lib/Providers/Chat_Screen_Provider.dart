@@ -72,7 +72,7 @@ class ChatProvider extends ChangeNotifier {
             Text(
               providerTrue.personData[index].chatConversation.toString(),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
