@@ -89,7 +89,7 @@ class ChatProvider extends ChangeNotifier {
                         context: context,
                         builder: (context) => AlertDialog(
                           title: const Text("Edit Details"),
-                          content: Container(
+                          content: SizedBox(
                             height: 370,
                             width: 400,
                             // color: Colors.grey,
@@ -99,8 +99,8 @@ class ChatProvider extends ChangeNotifier {
                                 controller: txtFullName!,
                                 hintText: "Full Name",
                                 icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                                    ? Icon(Icons.person)
-                                    : Icon(CupertinoIcons.person),
+                                    ? const Icon(Icons.person)
+                                    : const Icon(CupertinoIcons.person),
                               ),
                                 AdaptiveTextField(
                                   controller: txtPhoneNumber!,
