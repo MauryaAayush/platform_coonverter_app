@@ -276,7 +276,7 @@ class ChatProvider extends ChangeNotifier {
                                               .personData[index].imgPath));
                                   Navigator.pop(context);
                                 },
-                                child: Text("Save")),
+                                child: const Text("Save")),
                           ],
                         ),
                       );
