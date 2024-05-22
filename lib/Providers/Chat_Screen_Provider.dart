@@ -62,7 +62,7 @@ class ChatProvider extends ChangeNotifier {
                 context,
               ).personData[index].imgPath ==
                   null
-                  ? Icon(Icons.add_a_photo_outlined)
+                  ? const Icon(Icons.add_a_photo_outlined)
                   : null,
             ),
             Text(
