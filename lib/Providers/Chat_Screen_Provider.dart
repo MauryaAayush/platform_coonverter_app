@@ -88,7 +88,7 @@ class ChatProvider extends ChangeNotifier {
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Text("Edit Details"),
+                          title: const Text("Edit Details"),
                           content: Container(
                             height: 370,
                             width: 400,
