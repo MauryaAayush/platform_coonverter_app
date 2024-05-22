@@ -223,7 +223,7 @@ class ChatProvider extends ChangeNotifier {
                         context: context,
                         builder: (context) => CupertinoAlertDialog(
                           title: const Text("Edit Details"),
-                          content: Container(
+                          content: SizedBox(
                             height: 270,
                             width: 400,
                             child: Column(
