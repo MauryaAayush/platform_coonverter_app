@@ -31,7 +31,7 @@ class ThemeModeScreen extends StatelessWidget {
      : CupertinoListTile(
         leading: const Icon(CupertinoIcons.sun_max),
         title: const Text('Theme'),
-        subtitle: Text('Change Theme'),
+        subtitle: const Text('Change Theme'),
         trailing: CupertinoSwitch(
           value: profileProvidertrue.isdark,
           onChanged: (value) {
