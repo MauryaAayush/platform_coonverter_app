@@ -281,7 +281,7 @@ class ChatProvider extends ChangeNotifier {
                         ),
                       );
                     },
-                    child: Icon(Icons.edit)),
+                    child: const Icon(Icons.edit)),
                 CupertinoButton(
                     onPressed: () {
                       Navigator.pop(context);
