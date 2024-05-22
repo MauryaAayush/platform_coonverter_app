@@ -154,7 +154,7 @@ class ChatProvider extends ChangeNotifier {
                       Navigator.pop(context);
                       providerFalse.deleteData(index);
                     },
-                    icon: Icon(Icons.delete))
+                    icon: const Icon(Icons.delete))
               ],
             ),
             OutlinedButton(
