@@ -45,7 +45,7 @@ class ChatProvider extends ChangeNotifier {
         color: Colors.white,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             CircleAvatar(
