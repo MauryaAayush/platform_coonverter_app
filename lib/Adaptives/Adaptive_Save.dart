@@ -52,7 +52,7 @@ class AdaptiveSaveButton extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: CupertinoColors.activeBlue,
                     borderRadius: BorderRadius.circular(10)),
-                child: Text(
+                child: const Text(
                   "Save",
                   style: TextStyle(color: CupertinoColors.white),
                 )),
