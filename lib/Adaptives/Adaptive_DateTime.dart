@@ -84,7 +84,7 @@ class AdaptiveDateTime extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(CupertinoIcons.time),
+                  const Icon(CupertinoIcons.time),
                   CupertinoButton(
                     child: Text(
                       providerTrue.timeOfDay == null
