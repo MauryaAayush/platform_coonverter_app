@@ -12,7 +12,7 @@
       final providerTrue = Provider.of<ChatProvider>(context);
 
       return (providerTrue.personData.isEmpty)
-          ? Center(
+          ? const Center(
           child: Text(
             '!! No any call !!',
             style: TextStyle(fontSize: 18),
