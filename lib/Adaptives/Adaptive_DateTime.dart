@@ -58,7 +58,7 @@ class AdaptiveDateTime extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(CupertinoIcons.calendar),
+                  const Icon(CupertinoIcons.calendar),
                   CupertinoButton(
                     child: Text(
                       providerTrue.dateTime == null
