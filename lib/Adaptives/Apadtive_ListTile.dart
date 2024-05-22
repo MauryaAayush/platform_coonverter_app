@@ -106,7 +106,7 @@ class AdaptiveListTile extends StatelessWidget {
             trailing: isForChat
                 ? Text(
               "${providerTrue.personData[index].date!.day}-${providerTrue.personData[index].date!.month}-${providerTrue.personData[index].date!.year}, ${providerTrue.personData[index].timeOfDay!.hour}:${providerTrue.personData[index].timeOfDay!.minute}",
-              style: TextStyle(fontSize: 15),
+              style: const TextStyle(fontSize: 15),
             )
                 : CupertinoButton(
               child: const Icon(
