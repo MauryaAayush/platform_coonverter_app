@@ -232,8 +232,8 @@ class ChatProvider extends ChangeNotifier {
                                 controller: txtFullName!,
                                 hintText: "Full Name",
                                 icon: (Provider.of<SwitchProvider>(context).isAndroid)
-                                    ? Icon(Icons.person)
-                                    : Icon(CupertinoIcons.person),
+                                    ? const Icon(Icons.person)
+                                    : const Icon(CupertinoIcons.person),
                               ),
                                 AdaptiveTextField(
                                   controller: txtPhoneNumber!,
