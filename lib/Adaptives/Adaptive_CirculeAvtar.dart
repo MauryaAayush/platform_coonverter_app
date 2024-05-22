@@ -44,7 +44,7 @@ class Adaptive_CircleAvatar extends StatelessWidget {
           ).personData[index].imgPath!)
               : null,
           child: Provider.of<PersonAddProvider>(context).imgpath == null
-              ? Icon(Icons.add_a_photo_outlined)
+              ? const Icon(Icons.add_a_photo_outlined)
               : null),
     )
         : CupertinoButton(
@@ -68,7 +68,7 @@ class Adaptive_CircleAvatar extends StatelessWidget {
                           .imgpath!))
                   : null),
           child: Provider.of<PersonAddProvider>(context).imgpath == null
-              ? Icon(
+              ? const Icon(
             CupertinoIcons.camera,
             color: CupertinoColors.white,
           )
